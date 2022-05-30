@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ART</title>
+    <link rel="stylesheet" href="/css/semantic.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+            <div class="ui container">
+                <div class="ui massive menu">
+                <div class="header item">
+                    <a href="/" class="link">Home</a>
+                </div>
+                <a class="item">
+                Umjetnine
+                </a>
+                <a class="item">
+                Umjetnici
+                </a>
+                <a class="item">
+                O nama
+                </a>
+            </div>
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <div class="ui container">
+            <form id="form" action="/edit/<%- umjetnina._id %>" class="ui form" method="POST">
+                <div class="ui three fields">
+                    <div class="field">
+                        <label for="name" class="ui header black">Unesite naziv umjetnine</label>
+                        <input type="text" placeholder="Naziv" value="<%- umjetnina.name %>" name="name">
+                    </div>
+                    <div class="field">
+                        <label for="opis" class="ui header black">Opis</label>
+                        <input type="text" value="<%- umjetnina.opis %>" name="opis">
+                    </div>
+                    <div class="field">
+                        <label for="cijena" class="ui header black">Unesite cijenu</label>
+                        <input type="text" value="<%- umjetnina.cijena %>" name="cijena">
+                    </div>
+                </div>
+                <div class="ui fluid field">
+                    <input type="submit" value="Submit" class="ui button blue fluid">
+                </div>
+            </form>
+
+            <br><br>
+        </div>
+    </div>
+
+    <script src="js/semantic.min.js"></script>
+</body>
+</html>

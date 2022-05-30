@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ART</title>
+    <link rel="stylesheet" href="/css/semantic.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+            <div class="ui container">
+                <div class="ui massive menu">
+                <div class="header item">
+                    <a href="/" class="link">Home</a>
+                </div>
+                <a class="item">
+                Umjetnine
+                </a>
+                <a class="item">
+                Umjetnici
+                </a>
+                <a class="item">
+                O nama
+                </a>
+            </div>
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <div class="ui container">
+            <form action="/add" class="ui form" method="POST">
+                <div class="ui three fields">
+                    <div class="field">
+                        <label for="name" class="ui header black">Unesite ime umjetnine</label>
+                        <input type="text" name="name">
+                    </div>
+                    <div class="field">
+                        <label for="opis" class="ui header black">Opis</label>
+                        <input type="text" name="opis">
+                    </div>
+                    <div class="field">
+                        <label for="cijena" class="ui header black">Unesite cijenu</label>
+                        <input type="text" name="cijena">
+                    </div>
+                </div>
+                <div class="ui fluid field">
+                    <input type="submit" value="Submit" class="ui button blue fluid">
+                </div>
+            </form>
+
+            <br><br>
+            <table class="ui blue table">
+                <thead>
+                    <tr>
+                        <th>Ime umjetnine</th>
+                        <th>Opis</th>
+                        <th>Cijena</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% umjetninas.forEach(function(umjetnina){ %>
+                        <tr>
+                            <td><%-  umjetnina.name %></td>
+                            <td><%-  umjetnina.opis %></td>
+                            <td><%-  umjetnina.cijena %></td>
+                            <td><a class="ui blue button" href="/edit/<%- umjetnina._id %>"><i class="edit outline icon"></i></a></td>
+                            <td><a class="ui blue button"  href="/delete/<%- umjetnina._id %>"><i class="minus icon"></i></a></td>
+                        </tr>  
+                      <% }); %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="js/semantic.min.js"></script>
+</body>
+</html>
